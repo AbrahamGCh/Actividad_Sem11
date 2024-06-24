@@ -5,7 +5,7 @@
         <title>
             {% block title  %}
 
-            {% endblock %} 
+            {% endblock %}
             | Abraham Garcia
         </title>
 
@@ -14,8 +14,14 @@
 
     </head>
     <body>
-        <h1> Proyecto Web (LP3) | Abraham Garcia </h1>
-        <hr/>
+        <header>
+            <div id = "logotipo">
+                <img src="{% static 'images/LogoDJango.png' %} /">
+                <h1> Proyecto Web (LP3) </h1>
+            </div>
+        </header>
+
+    <nav>
         <ul>
             <li>
                 <a href="/inicio"> Inicio</a>
@@ -30,16 +36,26 @@
                 <a href="/rango2/10/15"> Mostrar Números [10,15]</a>
             </li>
         </ul>
-            <hr/>
+    </nav>
 
-             <div id = "content">
-                 {% block content %}
-                      <strong> Contenido en layout (Padre) </strong>
-                 {% endblock %}
-            </div>
+    <div class = "barra">
+        <span class = "esquina-izquierda"></span>
+        <span class = "relleno-barra"></span>
+        <span class = "esquina-derecha"></span>
+    </div>
+ 
+    <div id = "content">
+        <div class = "box">
+         <!-- <h2 class = "title"> Titulo de contenido (De prueba) </h2> // se elimina esto pag 7.9 -->
+          {% block content %}
+              <strong> Contenido en layout (Padre) </strong>
+          {% endblock %}
+        </div>
+    </div>
 
-        <footer>
+    <footer>
             UNTELS - Lenguaje de Programación III &copy; Abraham Garcia
-        </footer>
+    </footer>
+
     </body>
 </html>
